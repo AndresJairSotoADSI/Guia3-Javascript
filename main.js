@@ -1,23 +1,147 @@
-let con=1
-let cref=Number(prompt("Digite los creditos de la materia de fundamentos:"));
-let creb=Number(prompt("Digite los creditos de la materia bd:"));
-let cree=Number(prompt("Digite los creditos de la materia de etica:"));
-let can=Number(prompt("Digite la cantidad de estudiantes:"));
-while (con<=can){
-    let calf=Number(prompt("Digite la calificacion de la materia de funadamentos:"));
-    let calb=Number(prompt("Digite la calificacion de la materia de bd:"));
-    let cale=Number(prompt("Digite la calificacion de la materia de etica"));
-
-    let mat1=calf*cref;
-    let mat2=calb*creb;
-    let mat3=cale*cree;
-    /*suma de creditos lo siguiente*/
-    let cre=cref+creb+cree;
-
-    /*#sumamos todas las materias divido en el total de sus creditos*/
-    let pon=(mat1+mat2+mat3)/cre;
-    alert("su promedio ponderado es de:"+pon);
-    con+=1 
-} 
-
-alert("Fin del proceso");  
+let estudiantes = Number(prompt("Ingrese la cantidad de estudiantes a votar"))
+    let con = 1, a = 0, b = 0, c = 0;
+    while (estudiantes >= con) {
+        let voto = prompt("Ingrese el candidato por el que deseea votar (A, B o C)");
+        if (voto=='A'||voto=='a'){
+            a++;
+        } else if (voto=='B'||voto=='b'){
+            b++;
+        } else if (voto == 'C' || voto == 'c') {
+            c++;
+        }
+        con++;
+    }
+    let candidatoA = (a / estudiantes) * 100;
+    let candidatoB = (b / estudiantes) * 100;
+    let candidatoC = (c / estudiantes) * 100;
+    let con2 = 1;
+    a=0,b=0,c=0;
+    if (candidatoA > 51) {
+        alert("Gano el candidato A");
+    } else if (candidatoB > 51) {
+        alert("Gano el candidato B");
+    } else if (candidatoC > 51) {
+        alert("Gano el candidato C")
+    } else if (candidatoA==candidatoB && candidatoB==candidatoB){
+        alert("Triple empate");
+    } else if (candidatoA > candidatoB && candidatoB > candidatoC) {
+        let candidatoA=0,candidatoB=0;
+        while (estudiantes >= con2) {
+            let voto = prompt("Ingrese el candidato por el que deseea votar (A o B)");
+            if (voto == 'A' || voto == 'a') {
+                a++;
+            } else if (voto == 'B' || voto == 'b') {
+                b++;
+            }
+            candidatoA = (a / estudiantes) * 100;
+            candidatoB = (b / estudiantes) * 100;
+            con2++
+        }
+        if (candidatoA > candidatoB) {
+            alert("Gano el candidato A");
+        } else if (candidatoB > candidatoA) {
+            alert("Gano el candidato B");
+        } else {
+            alert("Empate");
+        }
+    } else if (candidatoA > candidatoC && candidatoC > candidatoB) {
+        let candidatoA=0,candidatoC=0;
+        while (estudiantes >= con2) {
+            let voto = prompt("Ingrese el candidato por el que deseea votar (A o C)");
+            if (voto == 'A' || voto == 'a') {
+                a++;
+            } else if (voto == 'C' || voto == 'c') {
+                c++;
+            }
+            candidatoA = (a / estudiantes) * 100;
+            candidatoC = (c / estudiantes) * 100;
+            con2++
+        }
+        if (candidatoA > candidatoC) {
+            alert("Gano el candidato A!!!");
+        } else if (candidatoC > candidatoA) {
+            alert("Gano el candidato C!!!");
+        } else {
+            alert("Empate");
+        }
+    } else if (candidatoB > candidatoC && candidatoC > candidatoA) {
+        let candidatoB=0,candidatoC=0;
+        while (estudiantes >= con2) {
+            let voto = prompt("Ingrese el candidato por el que deseea votar (B o C)");
+            if (voto == 'C' || voto == 'c') {
+                c++;
+            } else if (voto == 'B' || voto == 'b') {
+                b++;
+            }
+            candidatoC = (c / estudiantes) * 100;
+            candidatoB = (b / estudiantes) * 100;
+            con2++
+        }
+        if (candidatoB > candidatoC) {
+            alert("Gano el candidato B!!!");
+        } else if (candidatoC > candidatoB) {
+            alert("Gano el candidato C!!!");
+        } else {
+            alert("Empate");
+        }
+    } else if (candidatoB > candidatoA && candidatoA > candidatoC) {
+        let candidatoA=0,candidatoB=0;
+        while (estudiantes >= con2) {
+            let voto = prompt("Ingrese el candidato por el que deseea votar (A o B)");
+            if (voto == 'A' || voto == 'a') {
+                a++;
+            } else if (voto == 'B' || voto == 'b') {
+                b++;
+            }
+            candidatoA = (a / estudiantes) * 100;
+            candidatoB = (b / estudiantes) * 100;
+            con2++
+        }
+        if (candidatoA > candidatoB) {
+            alert("Gano el candidato A!!!");
+        } else if (candidatoB > candidatoA) {
+            alert("Gano el candidato B!!!");
+        } else {
+            alert("Empate");
+        }
+    } else if (candidatoC > candidatoA && candidatoA > candidatoB) {
+        let candidatoA=0,candidatoC=0;
+        while (estudiantes >= con2) {
+            let voto = prompt("Ingrese el candidato por el que deseea votar (A o C)");
+            if (voto == 'A' || voto == 'a') {
+                a++;
+            } else if (voto == 'C' || voto == 'c') {
+                c++;
+            }
+            candidatoA = (a / estudiantes) * 100;
+            candidatoC = (c / estudiantes) * 100;
+            con2++
+        }
+        if (candidatoA > candidatoC) {
+            alert("Gano el candidato A!!!");
+        } else if (candidatoC > candidatoA) {
+            alert("Gano el candidato C!!!");
+        } else {
+            alert("Empate");
+        }
+    } else if (candidatoC > candidatoB && candidatoB > candidatoA) {
+        let candidatoB=0,candidatoC=0;
+        while (estudiantes >= con2) {
+            let voto = prompt("Ingrese el candidato por el que deseea votar (C o B)");
+            if (voto == 'B' || voto == 'b') {
+                b++;
+            } else if (voto == 'C' || voto == 'c') {
+                c++;
+            }
+            candidatoB = (b / estudiantes) * 100;
+            candidatoC = (c / estudiantes) * 100;
+            con2++
+        }
+        if (candidatoB > candidatoC) {
+            alert("Gano el candidato C!!!");
+        } else if (candidatoC > candidatoB) {
+            alert("Gano el candidato B!!!");
+        } else {
+            alert("Empate");
+        }
+    }
