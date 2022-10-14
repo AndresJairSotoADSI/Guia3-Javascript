@@ -1,5 +1,6 @@
-cantidad=Number(parse("Cantidad de autos que entraron ala ciudad "));
-while ((con <=cantidad)) {
+cantidadVehi=Number(parse("Cantidad de autos que entraron ala ciudad "));
+let cont=1;
+while ((cont <=cantidadVehi)) {
     placa = Number(prompt("Digite el ultimo digito de placa"));
     if (((placa === 1) || (placa === 2))) {
         alert("Su color es amarilla");
